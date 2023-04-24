@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Layered Collage</title>
+
+    <style>
+        body {
+            width: 500px;
+            margin: 0 auto;
+        }
+
+        p {
+            background: aqua;
+            border: 3px solid blue;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        span {
+            background: red;
+            border: 1px solid black;
+        }
+
+        .positioned {
+            /*position: absolute;*/
+            background: yellow;
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
+
+        .positioned2 {
+            /*position: absolute;*/
+            background: yellow;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+        }
+
+        p:nth-of-type(1) {
+            position: sticky;
+            background: lime;
+            z-index: 1;
+
+        }
+
+        p:nth-of-type(2) {
+            position: relative;
+            background: rgb(111, 0, 255);
+            z-index: 5;
+        }
+
+        .animated-image {
+            position: relative;
+            animation-name: slide-in;
+            animation-duration: 3s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes slide-in {
+            0% {
+                left: -500%;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        .animated-image2 {
+            animation-name: rotate;
+            animation-duration: 2s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            z-index: 0
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animated-image3 {
+            animation-name: fade;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Layered Collage</h1>
+    <img class="animated-image" src="images/image4.png" alt="Animated Image">
+
+    <p class="positioned"><strong>I NEED A TAILOR!</strong>
+    </p>
+
+    <img class="animated-image2" height="300px" src="images/image5.jpg" alt="Animated Image">
+
+    <img src="images/image1.png" height=500px alt="">
+
+    <p class="positioned">The sticky positioned box will go <strong>UNDER me. <br><br><br><br><br><br><br><br></strong>
+    </p>
+
+    <img src="images/image2.jpg" height=500px alt="">
+
+    <p>The sticky positioned box will go <strong>OVER me <br><br><br><br><br><br><br><br></strong>.</p>
+
+    <img class="animated-image3" src="images/image6.jpg" alt="Animated Image">
+
+    <img src="images/image3.PNG" alt="">
+
+    <p class="positioned2"><strong>SPUNCH BOP</strong><img src="images/image7.jpg" alt=""></p>
+    <br><br><br><br><br><br>
+
+    
+
+
+</body>
+
+</html>
